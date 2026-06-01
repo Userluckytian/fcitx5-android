@@ -4,10 +4,12 @@ on:
   pull_request:
   push:
     branches: [master]
+  workflow_dispatch:
 
 jobs:
   develop:
     runs-on: ubuntu-24.04
+    if: startsWith(github.event.head_commit.message, '构建app')
     steps:
       - name: Fetch source code
         uses: actions/checkout@v6
@@ -25,3 +27,8 @@ jobs:
         run: |
           nix develop .#noAS --command ./gradlew :app:assembleRelease
           nix develop .#noAS --command ./gradlew :assembleReleasePlugins
+      - name: Upload APK
+        uses: actions/upload-artifact@v6
+        with:
+          name: fcitx5-android-release
+          path: app/build/outputs/apk/release/*.apk
