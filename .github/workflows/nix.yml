@@ -24,6 +24,10 @@ jobs:
           name: fcitx5-android
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Build Release APK
+        env:
+          SIGN_KEY_BASE64: ${{ secrets.SIGN_KEY_BASE64 }}
+          SIGN_KEY_PWD: ${{ secrets.SIGN_KEY_PWD }}
+          SIGN_KEY_ALIAS: ${{ secrets.SIGN_KEY_ALIAS }}
         run: |
           nix develop .#noAS --command ./gradlew :app:assembleRelease
           nix develop .#noAS --command ./gradlew :assembleReleasePlugins
