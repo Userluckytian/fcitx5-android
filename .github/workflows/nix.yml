@@ -30,8 +30,14 @@ jobs:
           SIGN_KEY_ALIAS: ${{ secrets.SIGN_KEY_ALIAS }}
         run: |
           nix develop .#noAS --command ./gradlew clean
-          nix develop .#noAS --command ./gradlew :app:assembleRelease --stacktrace --info
-          nix develop .#noAS --command ./gradlew :assembleReleasePlugins --stacktrace --info
+          nix develop .#noAS --command ./gradlew :app:assembleRelease --stacktrace --info 2>&1 | tee build.log
+          nix develop .#noAS --command ./gradlew :assembleReleasePlugins --stacktrace --info 2>&1 | tee -a build.log
+      - name: Upload Build Log
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: build-log
+          path: build.log
       - name: Upload APK
         uses: actions/upload-artifact@v6
         with:
