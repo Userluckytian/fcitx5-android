@@ -9,7 +9,7 @@ on:
 jobs:
   develop:
     runs-on: ubuntu-24.04
-    if: startsWith(github.event.head_commit.message, '构建app')
+    if: contains(github.event.head_commit.message, '构建app')
     steps:
       - name: Fetch source code
         uses: actions/checkout@v6
