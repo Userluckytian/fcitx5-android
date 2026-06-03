@@ -29,6 +29,8 @@ jobs:
           SIGN_KEY_PWD: ${{ secrets.SIGN_KEY_PWD }}
           SIGN_KEY_ALIAS: ${{ secrets.SIGN_KEY_ALIAS }}
         run: |
+          # 清理可能存在的非法文件名资源
+          rm -f app/src/main/res/raw/a-1.mp3 app/src/main/res/raw/b-1.mp3
           nix develop .#noAS --command ./gradlew clean
           nix develop .#noAS --command ./gradlew :app:assembleRelease --stacktrace --info 2>&1 | tee build.log
           nix develop .#noAS --command ./gradlew :assembleReleasePlugins --stacktrace --info 2>&1 | tee -a build.log
