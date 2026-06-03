@@ -320,18 +320,19 @@ class KawaiiBarComponent : UniqueViewComponent<KawaiiBarComponent, FrameLayout>(
                 moreButton.setOnClickListener {
                     windowManager.attachWindow(StatusAreaWindow())
                 }
-                aiSuggestionButton.setOnClickListener {
-                    windowManager.attachWindow(AiSuggestionWindow())
-                }
-                gifStickerButton.setOnClickListener {
-                    windowManager.attachWindow(GifStickerWindow())
-                }
-                textPlaybackButton.setOnClickListener {
-                    windowManager.attachWindow(TextPlaybackWindow())
-                }
-                settingsButton.setOnClickListener {
-                    windowManager.attachWindow(SettingsWindow())
-                }
+                // 暂时注释掉新功能按钮的点击事件
+                // aiSuggestionButton.setOnClickListener {
+                //     windowManager.attachWindow(AiSuggestionWindow())
+                // }
+                // gifStickerButton.setOnClickListener {
+                //     windowManager.attachWindow(GifStickerWindow())
+                // }
+                // textPlaybackButton.setOnClickListener {
+                //     windowManager.attachWindow(TextPlaybackWindow())
+                // }
+                // settingsButton.setOnClickListener {
+                //     windowManager.attachWindow(SettingsWindow())
+                // }
             }
             clipboardUi.suggestionView.apply {
                 setOnClickListener {

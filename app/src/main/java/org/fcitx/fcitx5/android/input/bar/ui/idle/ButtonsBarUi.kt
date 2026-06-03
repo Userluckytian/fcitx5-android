@@ -48,20 +48,21 @@ class ButtonsBarUi(override val ctx: Context, private val theme: Theme) : Ui {
         contentDescription = ctx.getString(R.string.status_area)
     }
 
-    val aiSuggestionButton = toolButton(R.drawable.ic_baseline_emoji_objects_24).apply {
-        contentDescription = ctx.getString(R.string.ai_suggestion)
-    }
-
-    val gifStickerButton = toolButton(R.drawable.ic_baseline_movie_24).apply {
-        contentDescription = ctx.getString(R.string.gif_sticker)
-    }
-
-    val textPlaybackButton = toolButton(R.drawable.ic_baseline_play_arrow_24).apply {
-        contentDescription = ctx.getString(R.string.text_playback)
-    }
-
-    val settingsButton = toolButton(R.drawable.ic_baseline_settings_24).apply {
-        contentDescription = ctx.getString(R.string.settings)
-    }
+    // 暂时注释掉新功能按钮
+    // val aiSuggestionButton = toolButton(R.drawable.ic_baseline_emoji_objects_24).apply {
+    //     contentDescription = ctx.getString(R.string.ai_suggestion)
+    // }
+    //
+    // val gifStickerButton = toolButton(R.drawable.ic_baseline_movie_24).apply {
+    //     contentDescription = ctx.getString(R.string.gif_sticker)
+    // }
+    //
+    // val textPlaybackButton = toolButton(R.drawable.ic_baseline_play_arrow_24).apply {
+    //     contentDescription = ctx.getString(R.string.text_playback)
+    // }
+    //
+    // val settingsButton = toolButton(R.drawable.ic_baseline_settings_24).apply {
+    //     contentDescription = ctx.getString(R.string.settings)
+    // }
 
 }
