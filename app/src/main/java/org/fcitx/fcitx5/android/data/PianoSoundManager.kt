@@ -40,15 +40,15 @@ object PianoSoundManager {
         val midNotes = listOf("c3", "d3", "e3", "f3", "g3", "a3", "b3", "c4", "d4")
         midFreq.forEachIndexed { i, c -> put(c, midNotes[i]) }
 
-        // 低频字母 → accent 音区 (a-1~b2)
+        // 低频字母 → accent 音区 (a_1~b0)
         val lowFreq = listOf('k', 'b', 'p', 'j', 'v', 'q', 'z', 'x')
-        val lowNotes = listOf("a-1", "b-1", "c0", "d0", "e0", "f0", "g0", "a0")
+        val lowNotes = listOf("a_1", "a0", "b0", "c0", "d0", "e0", "f0", "g0")
         lowFreq.forEachIndexed { i, c -> put(c, lowNotes[i]) }
     }
 
     /** 音符名 → raw 资源 ID 映射 */
     private val noteToResId: Map<String, Int> = mapOf(
-        "a-1" to R.raw.a_1, "b-1" to R.raw.b_1,
+        "a_1" to R.raw.a_1,
         "c0" to R.raw.c0, "d0" to R.raw.d0, "e0" to R.raw.e0, "f0" to R.raw.f0, "g0" to R.raw.g0,
         "a0" to R.raw.a0, "b0" to R.raw.b0,
         "c1" to R.raw.c1, "d1" to R.raw.d1, "e1" to R.raw.e1, "f1" to R.raw.f1, "g1" to R.raw.g1,
