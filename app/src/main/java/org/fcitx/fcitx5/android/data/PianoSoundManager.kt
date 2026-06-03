@@ -61,9 +61,7 @@ object PianoSoundManager {
         "a4" to R.raw.a4, "b4" to R.raw.b4,
         "c5" to R.raw.c5, "d5" to R.raw.d5, "e5" to R.raw.e5, "f5" to R.raw.f5, "g5" to R.raw.g5,
         "a5" to R.raw.a5, "b5" to R.raw.b5,
-        "c6" to R.raw.c6, "d6" to R.raw.d6, "e6" to R.raw.e6, "f6" to R.raw.f6, "g6" to R.raw.g6,
-        "a6" to R.raw.a6, "b6" to R.raw.b6,
-        "c7" to R.raw.c7
+        "c6" to R.raw.c6
     )
 
     private var soundPool: SoundPool? = null
