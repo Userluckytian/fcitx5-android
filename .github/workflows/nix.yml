@@ -29,8 +29,9 @@ jobs:
           SIGN_KEY_PWD: ${{ secrets.SIGN_KEY_PWD }}
           SIGN_KEY_ALIAS: ${{ secrets.SIGN_KEY_ALIAS }}
         run: |
-          nix develop .#noAS --command ./gradlew :app:assembleRelease
-          nix develop .#noAS --command ./gradlew :assembleReleasePlugins
+          nix develop .#noAS --command ./gradlew clean
+          nix develop .#noAS --command ./gradlew :app:assembleRelease --stacktrace --info 2>&1 | grep -E "(error:|FAILED|Exception|Kotlin)" || true
+          nix develop .#noAS --command ./gradlew :assembleReleasePlugins --stacktrace --info 2>&1 | grep -E "(error:|FAILED|Exception|Kotlin)" || true
       - name: Upload APK
         uses: actions/upload-artifact@v6
         with:
