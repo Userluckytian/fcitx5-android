@@ -59,6 +59,7 @@ object InputFeedbacks {
             InputFeedbackMode.Enabled -> {}
             InputFeedbackMode.Disabled -> return
             InputFeedbackMode.FollowingSystem -> if (!systemHapticFeedback) return
+            InputFeedbackMode.Piano -> return
         }
         if (keyUp && !hapticOnKeyUp) return
         val duration: Long

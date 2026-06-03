@@ -15,6 +15,7 @@ import androidx.core.view.setPadding
 import org.fcitx.fcitx5.android.data.PianoSoundManager
 import org.fcitx.fcitx5.android.data.theme.Theme
 import splitties.dimensions.dp
+import splitties.views.backgroundColor
 import splitties.views.dsl.core.Ui
 import splitties.views.dsl.core.frameLayout
 import splitties.views.dsl.core.lParams
