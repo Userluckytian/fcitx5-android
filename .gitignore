@@ -65,8 +65,14 @@ captures/
 
 # Keystore files
 # Uncomment the following lines if you do not want to check your keystore files in.
-#*.jks
-#*.keystore
+*.jks
+*.keystore
+
+# Signing key
+sign_key_base64.txt
+
+# Development references
+references/
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
