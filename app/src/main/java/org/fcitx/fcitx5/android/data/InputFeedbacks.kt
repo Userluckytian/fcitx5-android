@@ -23,7 +23,8 @@ object InputFeedbacks {
     enum class InputFeedbackMode(override val stringRes: Int) : ManagedPreferenceEnum {
         FollowingSystem(R.string.following_system_settings),
         Enabled(R.string.enabled),
-        Disabled(R.string.disabled);
+        Disabled(R.string.disabled),
+        Piano(R.string.piano);
     }
 
     private var systemSoundEffects = false
@@ -110,11 +111,17 @@ object InputFeedbacks {
 
     private val audioManager = appContext.audioManager
 
-    fun soundEffect(effect: SoundEffect) {
+    fun soundEffect(effect: SoundEffect, keyChar: Char? = null) {
         when (soundOnKeyPress) {
             InputFeedbackMode.Enabled -> {}
             InputFeedbackMode.Disabled -> return
             InputFeedbackMode.FollowingSystem -> if (!systemSoundEffects) return
+            InputFeedbackMode.Piano -> {
+                if (keyChar != null) {
+                    PianoSoundManager.playPianoSound(keyChar)
+                }
+                return
+            }
         }
         val fx = when (effect) {
             SoundEffect.Standard -> AudioManager.FX_KEYPRESS_STANDARD

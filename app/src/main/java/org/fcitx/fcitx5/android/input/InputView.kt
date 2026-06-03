@@ -23,6 +23,7 @@ import org.fcitx.fcitx5.android.daemon.FcitxConnection
 import org.fcitx.fcitx5.android.daemon.launchOnReady
 import org.fcitx.fcitx5.android.data.prefs.AppPrefs
 import org.fcitx.fcitx5.android.data.prefs.ManagedPreferenceProvider
+import org.fcitx.fcitx5.android.data.PianoSoundManager
 import org.fcitx.fcitx5.android.data.theme.Theme
 import org.fcitx.fcitx5.android.data.theme.ThemeManager
 import org.fcitx.fcitx5.android.input.bar.KawaiiBarComponent
@@ -187,6 +188,8 @@ class InputView(
     init {
         // MUST call before any operation
         setupScope()
+
+        PianoSoundManager.initialize(context)
 
         // restore punctuation mapping in case of InputView recreation
         fcitx.launchOnReady {

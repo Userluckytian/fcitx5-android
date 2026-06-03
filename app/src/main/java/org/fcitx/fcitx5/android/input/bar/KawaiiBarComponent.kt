@@ -63,6 +63,10 @@ import org.fcitx.fcitx5.android.input.keyboard.CustomGestureView
 import org.fcitx.fcitx5.android.input.keyboard.KeyboardWindow
 import org.fcitx.fcitx5.android.input.popup.PopupComponent
 import org.fcitx.fcitx5.android.input.status.StatusAreaWindow
+import org.fcitx.fcitx5.android.input.ai.AiSuggestionWindow
+import org.fcitx.fcitx5.android.input.gif.GifStickerWindow
+import org.fcitx.fcitx5.android.input.playback.TextPlaybackWindow
+import org.fcitx.fcitx5.android.input.settings.SettingsWindow
 import org.fcitx.fcitx5.android.input.wm.InputWindow
 import org.fcitx.fcitx5.android.input.wm.InputWindowManager
 import org.fcitx.fcitx5.android.utils.AppUtil
@@ -315,6 +319,18 @@ class KawaiiBarComponent : UniqueViewComponent<KawaiiBarComponent, FrameLayout>(
                 }
                 moreButton.setOnClickListener {
                     windowManager.attachWindow(StatusAreaWindow())
+                }
+                aiSuggestionButton.setOnClickListener {
+                    windowManager.attachWindow(AiSuggestionWindow())
+                }
+                gifStickerButton.setOnClickListener {
+                    windowManager.attachWindow(GifStickerWindow())
+                }
+                textPlaybackButton.setOnClickListener {
+                    windowManager.attachWindow(TextPlaybackWindow())
+                }
+                settingsButton.setOnClickListener {
+                    windowManager.attachWindow(SettingsWindow())
                 }
             }
             clipboardUi.suggestionView.apply {

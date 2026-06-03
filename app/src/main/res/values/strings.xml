@@ -233,6 +233,11 @@
     <string name="whether_reset_switch_preference">Would you like to reset this preference to default?</string>
     <string name="enabled">Enabled</string>
     <string name="following_system_settings">Follow system settings</string>
+    <string name="piano">Piano</string>
+    <string name="ai_suggestion">AI Suggestion</string>
+    <string name="gif_sticker">GIF Sticker</string>
+    <string name="text_playback">Text Playback</string>
+    <string name="settings">Settings</string>
     <string name="button_sound">Sound on keypress</string>
     <string name="button_sound_volume">Keypress sound volume</string>
     <string name="clipboard_return_after_paste">Return after pasting</string>
